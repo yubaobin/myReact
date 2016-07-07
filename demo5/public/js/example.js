@@ -52,6 +52,6 @@ var CommentBox = React.createClass({
 });
 
 ReactDOM.render(
-	<CommentBox url="/api/comments"/>,
+	<CommentBox data={data}/>,
 	document.getElementById('content')
 );
