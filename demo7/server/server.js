@@ -4,11 +4,16 @@ var path = require('path');
 var fs = require('fs');
 var file = require('./file');
 var parse = require('co-body');
+var staticServer = require('koa-static');
 var app = koa();
 
 var appRouter = router();
 var COMMENTS_FILE = path.join(__dirname,'comments.json');
-appRouter.get('/api/comments',function *(next){
+app.use(staticServer(path.join(__dirname,'../public')));
+
+appRouter.get('/',function *(next){
+	this.redirect('/public/index.html');
+}).get('/api/comments',function *(next){
 	var data = yield file.readFile;
 	this.body = JSON.parse(data);
 }).post('/api/comments',function *(next){
