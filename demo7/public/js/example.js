@@ -1,4 +1,7 @@
 //组件
+var submitButton = {
+	background:'#3B9FEF'
+}
 var Comment = React.createClass({
 	render: function(){
 		return (
@@ -11,6 +14,7 @@ var Comment = React.createClass({
 });
 var CommentList = React.createClass({
 	render: function(){
+		console.log("====",this.props.data);
 		var commentNode = this.props.data.map(function(comment){
 			return <Comment comment={comment}>
 					</Comment>
@@ -24,6 +28,7 @@ var CommentList = React.createClass({
 });
 
 var CommentForm = React.createClass({
+	
 	getTime: function(){
 		var date = new Date();
 		return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +
@@ -46,7 +51,7 @@ var CommentForm = React.createClass({
 		return (
 			<form className="commentForm" onSubmit={this.handleSubmit}>
 				<textarea type="text" placeholder="something" ref="text" /><br/>
-				<input type="submit" value="sure" />
+				<input type="submit" value="sure" style={submitButton}/>
 			</form>
 		);
 	}

@@ -1,35 +1,19 @@
 {
-  "name": "react-tutorial",
-  "version": "0.0.0",
-  "private": true,
-  "license": "see LICENSE file",
-  "description": "Code from the React tutorial.",
+  "name": "server",
+  "version": "0.0.1",
+  "description": "This is a server",
   "main": "server.js",
-  "dependencies": {
-    "body-parser": "^1.4.3",
-    "express": "^4.4.5"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/reactjs/react-tutorial.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react",
-    "tutorial",
-    "comment",
-    "example"
+    "server"
   ],
-  "author": "petehunt",
-  "bugs": {
-    "url": "https://github.com/reactjs/react-tutorial/issues"
-  },
-  "homepage": "https://github.com/reactjs/react-tutorial",
-  "engines" : {
-    "node" : "0.12.x"
+  "author": "ybb",
+  "license": "ISC",
+  "dependencies": {
+    "co-body": "^4.2.0",
+    "koa": "^1.2.0",
+    "koa-router": "^5.4.0"
   }
 }
