@@ -1,0 +1,16 @@
+[{
+	"id":1,
+	"name":"Mac Book",
+	"price":15000,
+	"num":100 
+},{
+	"id":2,
+	"name":"IBM Think pad",
+	"price":10000,
+	"num":80 
+},{
+	"id":3,
+	"name":"iphone 7",
+	"price":6288,
+	"num":100 
+}]
