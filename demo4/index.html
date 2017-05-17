@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo4</title>
+</head>
+<body>
+<div id="example"></div>
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+<script type="text/babel">
+    var xhr = new XMLHttpRequest();
+    var HelloAjax = React.createClass({
+      getInitialState() {
+        return {
+          list: [],
+        }
+      },
+      handleClick: function(){
+        xhr.open("get", this.props.source, true);
+        xhr.send();
+        xhr.onreadystatechange = this.stateChange;
+      },
+      stateChange: function() {
+        if(xhr.status === 200 && xhr.readyState === 4) {
+          this.setState({list: JSON.parse(xhr.responseText)});
+        }
+      },
+      render: function () {
+        return <div>
+                 <ul>{this.state.list.map(function(value, index){
+                     return <li key={index}>{value.url}</li>;
+                   })
+                 }</ul>
+                 <button onClick={this.handleClick}>加载</button>
+               </div>;
+      }
+    });
+    ReactDOM.render(
+      <HelloAjax source="https://api.github.com/users/octocat/gists"></HelloAjax>,
+      document.getElementById("example")
+    )
+</script>
+</body>
+</html>

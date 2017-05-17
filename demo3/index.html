@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>demo3</title>
+	<style>
+		.hello {
+			position: absolute;
+			transition: 10s all ease;
+		}
+	</style>
+</head>
+<body>
+<div id="example"></div>
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+<script type="text/babel">
+  var HelloMessage = React.createClass({
+    getInitialState: function(){
+      return {
+        count: 0,
+		top: 0,
+	  };
+	},
+    componentWillMount() {
+      console.log('componentWillMount()');
+	},
+    componentWillUpdate(nextProps, nextState) {
+      console.log(('componentWillUpdate', nextProps));
+      console.log(('componentWillUpdate', nextState));
+	},
+    shouldComponentUpdate(nextProps, nextState) {
+      console.log('shouldComponentUpdate()');
+      return true;
+	},
+    moveUp: function(){
+      this.setState({top: this.state.top - 100});
+    },
+    moveDown: function(){
+      this.setState({top: this.state.top + 100});
+	},
+    render: function(){
+      return <div>
+                <div className="hello" ref="hello" style={{top: this.state.top}}>Hello {this.state.count}</div>
+                <button onClick={this.moveUp}>上移</button>
+		        <button onClick={this.moveDown}>下移</button>
+            </div>;
+    }
+  })
+  var name = 123;
+  ReactDOM.render(
+    <HelloMessage name="hello"/>,
+    document.querySelector('#example')
+  );
+</script>
+</body>
+</html>
