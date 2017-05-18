@@ -43,7 +43,7 @@
 	},
     render: function(){
       return <div>
-                <div className="hello" ref="hello" style={{top: this.state.top}}>Hello {this.state.count}</div>
+                <div className="hello" ref="hello" style={{top: this.state.top + 'px'}}>Hello {this.state.count}</div>
                 <button onClick={this.moveUp}>上移</button>
 		        <button onClick={this.moveDown}>下移</button>
             </div>;
