@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import logo from './logo.svg';
 import './App.css';
 
@@ -25,6 +26,7 @@ class App extends Component {
         </div>
         <button onClick={this.moveUp.bind(this)}>⬆</button>
         <button onClick={this.moveDown.bind(this)}>⬇</button>
+        <div><Link to="/book">书本</Link></div>
       </div>
     );
   }

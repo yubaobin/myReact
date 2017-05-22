@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Author from './Author';
+import PropTypes from 'prop-types';
 import './Detail.css';
 
 class Detail extends Component {
@@ -6,13 +8,18 @@ class Detail extends Component {
     console.log('Detail created');
     super(props);
   }
+  getChildContext() {
+    return {color: "purple"};
+  }
   render() {
-    return <ul> {
-        this.props.params.id%2 === 0? '这是本书': '这是读后感'
-    }</ul>
+    return <div> {this.props.params.id%2 === 0? '这是本书': '这是读后感'}
+             <Author />
+           </div>
   }
 }
-
+Detail.childContextTypes = {
+  color: PropTypes.string
+}
 export default Detail;
 
 

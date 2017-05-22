@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link, IndexLink } from 'react-router';
-import PropTypes from 'prop-types';
 import './Book.css';
 
 class Book extends Component {
@@ -8,12 +7,23 @@ class Book extends Component {
     console.log('book created');
     super(props)
   }
-  // handleClick(id) {
-  //   this.context.router.push(`/detail/${id}`);
-  // }
+  componentDidMount() {
+    this.props.router.setRouteLeaveHook(
+      this.props.route,
+      this.routerWillLeave
+    );
+  }
+  routerWillLeave(nextLocation) {
+    console.log(nextLocation);
+    return "真的离开"
+  }
+  toApp() {
+    this.props.router.push('/');
+  }
   render() {
     return <div>
-             <h1><Link to="/book" activeClassName="active" onlyActiveOnIndex={ true }>首页</Link></h1>
+             <h1 onClick={this.toApp.bind(this)}>真首页</h1>
+             <h1><Link to="/book" activeClassName="active" onlyActiveOnIndex={ true }>首页onlyActiveOnIndex</Link></h1>
              <h1><IndexLink to="/book" activeClassName="active" >首页IndexLink</IndexLink></h1>
              <ul>{
                this.props.bookList.map((item, index) =>
@@ -24,9 +34,6 @@ class Book extends Component {
            </div>
            </div>
   }
-}
-Book.contextTypes = {
-  router: PropTypes.object
 }
 Book.defaultProps = {
   bookList: [{
