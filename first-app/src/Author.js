@@ -12,11 +12,11 @@ class Author extends Component {
   render() {
     return <div>
              <h5>{ this.props.name || this.props.defaultName } </h5>
-             <h5>name组件: <Name name="444"/></h5>
+             <h5>name组件: <Name /></h5>
            </div>
   }
 }
-Author.defaultType = {
+Author.defaultProps = {
   defaultName: '未命名'
 }
 export default Author;

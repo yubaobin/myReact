@@ -17,7 +17,7 @@ const leave = () => {
 ReactDOM.render(
   <Router history={ hashHistory }>
     <Route path="/" component={App} />
-    <Route path="/book" component={Book} >
+    <Route path="/book(/aaa)" component={Book} >
       <Route onEnter={enter} onLeave={leave} path="/detail/:id" component={Detail} />
       <IndexRoute component={Info} />
     </Route>
