@@ -11,7 +11,10 @@ class Name extends Component {
   componentDidMount() {
   }
   render() {
-    return <span style={{color: this.context.color}}>{ this.props.name  || this.props.defaultName }</span>
+    return <div>
+           <span style={{color: this.context.color}}>{ this.props.name  || this.props.defaultName }</span>
+           <span>{this.props.value}</span>
+           </div>
   }
 }
 
