@@ -1,16 +1,15 @@
 {
-  "name": "redux-demo",
+  "name": "redux-react-demo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "redux-logger": "^3.0.6"
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0"
   },
   "devDependencies": {
-    "prop-types": "^15.5.10",
-    "react-scripts": "1.0.6",
-    "redux": "^3.6.0"
+    "react-scripts": "1.0.7"
   },
   "scripts": {
     "start": "react-scripts start",
