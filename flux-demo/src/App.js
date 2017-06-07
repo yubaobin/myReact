@@ -18,12 +18,13 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
+        <h1>输入些东西</h1>
+        <ButtonController {...this.props}/>
         <div id="list">
         { this.props.list.map((item, index) => {
           return <div className="item" key={index}>{ item }<span onClick={this.deleteItem.bind(this, index)} className="delete"></span></div>
         })}
         </div>
-        <ButtonController {...this.props}/>
       </div>
     );
   }

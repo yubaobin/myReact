@@ -2,29 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
-import { connect, Provider } from 'react-redux';
-import Counter from './Counter';
+import { Provider } from 'react-redux';
+import CounterView from './Counter';
+import BookListView from './BookList';
 import Reducer from './Reducer';
-import { createStore } from 'redux';
-const mapStateToProps = (state) => {
-  return {
-    value: state.count,
-  }
-}
-const mapDispatchToProps = (dispatch) => {
-  return {
-    handleClick: () => dispatch({ type: 'ADD'}),
-  }
-}
+import { createStore, applyMiddleware } from 'redux';
+import promise from 'redux-promise';
+import thunk from 'redux-thunk';
 
-//生成容器组件
-const App = connect(mapStateToProps, mapDispatchToProps)(Counter);
-
-const store = createStore(Reducer);
+const store = createStore(
+  Reducer,
+  applyMiddleware(thunk, promise)
+);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <div>
+      <CounterView />
+      <BookListView />
+    </div>
   </Provider>,
   document.getElementById('root')
 );

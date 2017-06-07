@@ -2,7 +2,7 @@
  * Created by yohouakira on 2017/5/25.
  */
 import { ReduceStore }  from 'flux/utils';
-import ButtonActionTypes from './ButtonActionTypes';
+import ActionTypes from './ActionTypes';
 import AppDispatcher from './AppDispatcher';
 class ButtonStore extends ReduceStore {
   constructor() {
@@ -13,9 +13,9 @@ class ButtonStore extends ReduceStore {
   }
   reduce(state, action) {
     switch (action.type) {
-      case ButtonActionTypes.NEW_ITEM:
+      case ActionTypes.NEW_ITEM:
         return [...state, action.text];
-      case ButtonActionTypes.DELETE_ITEM:
+      case ActionTypes.DELETE_ITEM:
         state.splice(action.id, 1);
         return [...state];
       default:

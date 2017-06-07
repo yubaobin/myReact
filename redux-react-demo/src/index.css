@@ -1,5 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #F5F5F5;
+}
+ul, li {
+  list-style-type: none;
+}
+input {
+  outline: none;
+}
+#root {
+  text-align: center;
+}
+
+.counter-view > .counter > span:nth-child(2) {
+  display: inline-block;
+  width: 90px;
+  text-align: left;
+}
+.book-view {
+  width: 30%;
+  margin: 20px auto;
+  background-color: #FFF;
+  box-shadow: 0px 1px 1px 1px #CDCDCD;
+}
+.book-view .loading {
+  padding: 30px 0;
+}
+.book-view .view-header {
+  border-bottom: 1px solid #cdcdcd;
+}
+.book-view input {
+  width: 97%;
+  border: 0;
+  padding: 10px 5px;
+}
+
+.book-view li {
+  text-align: left;
+  padding: 20px 5px;
+  border-top: 1px solid #cdcdcd;
+}
+.book-list .close {
+  cursor: pointer;
+  display: none;
+  float: right;
+}
+.book-list li:hover .close{
+  display: inline-block;
 }

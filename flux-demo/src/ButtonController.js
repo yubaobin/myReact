@@ -11,12 +11,15 @@ class ButtonController extends Component {
     super(props)
   }
   newItem() {
-    this.props.onAddItem(this.refs.name.value);
+    this.props.onAddItem(this.props.draft);
+  }
+  changeDraft() {
+    this.props.onChangeDraft(this.refs.name.value);
   }
   render() {
     return (
       <div>
-        <input ref="name"/>
+        <input ref="name" onChange={this.changeDraft.bind(this)}/>
         <Button onClick={ this.newItem.bind(this) } name="添加"/>
       </div>
     )

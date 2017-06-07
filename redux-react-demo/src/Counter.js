@@ -2,15 +2,26 @@
  * Created by yohouakira on 2017/6/2.
  */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 class Counter extends Component {
   render() {
-    const { value, handleClick } = this.props;
+    const { length } = this.props;
     return (
-      <div>
-        <p>{value}</p>
-        <button onClick={handleClick}>+</button>
+      <div className="counter-view">
+        <div className="counter">
+          <span>总数: </span>
+          <span>{length}</span>
+        </div>
       </div>
     )
   }
 }
-export default Counter;
+
+const mapStateToProps = (state) => {
+  return {
+    length: state.loader.bookList.length,
+  }
+}
+
+export default connect(mapStateToProps)(Counter);
