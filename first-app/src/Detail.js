@@ -18,14 +18,14 @@ class Detail extends Component {
     this.setState({color: e.target.value});
   }
   render() {
-    return <div> {this.props.params.id%2 === 0? '这是本书': '这是读后感'}
+    return <div> {this.props.params.id%2 === 0? '这是本书': '这是读后感'} <br/>
              <select onChange={this.changeColor.bind(this)}>{
                this.props.colors.map((item) => {
                  return <option key={item.value} value={item.value}>{item.name}</option>
                })
              }
              </select>
-             <Author />
+             <div>Author组件: <Author /></div>
            </div>
   }
 }

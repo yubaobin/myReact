@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  --9: 90px;
 }
 body {
   margin: 0;
@@ -20,11 +21,11 @@ input {
 
 .counter-view > .counter > span:nth-child(2) {
   display: inline-block;
-  width: 90px;
+  width: calc(100px / var(--9));
   text-align: left;
 }
 .book-view {
-  width: 30%;
+  width: 30vw;
   margin: 20px auto;
   background-color: #FFF;
   box-shadow: 0px 1px 1px 1px #CDCDCD;
@@ -36,7 +37,7 @@ input {
   border-bottom: 1px solid #cdcdcd;
 }
 .book-view input {
-  width: 97%;
+  width: calc(100% - 10px);
   border: 0;
   padding: 10px 5px;
 }

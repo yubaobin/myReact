@@ -1,0 +1,117 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+ul,li {
+  list-style-type: none;
+}
+
+li {
+  cursor: pointer;
+}
+
+a:link, a:visited, a:active, a:hover {
+  color: #9f9f9f;
+}
+
+input {
+  outline: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #FFF;
+  border-radius: 4px;
+  padding: 5px 10px;
+  border: 1px solid #CDCDCD;
+  line-height: 1;
+}
+input:focus {
+  border:1px solid #2297e5;
+}
+
+#root {
+  height: 100%;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (min-width: 1281px) {
+  #root {
+    width: 1280px;
+  }
+}
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.fix {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.container-view {
+  height: 100%;
+  width: 100%;
+}
+.container-view .left .active {
+  color: #2297e5;
+}
+.container-view .left {
+  width: 200px;
+  padding: 15px 10px;
+  margin: 10px;
+  height: 100%;
+  box-shadow:-10px 0 10px #CDCDCD, /*左边阴影*/
+  10px 0 10px #CDCDCD, /*右边阴影*/
+  0 0 0 #FFF, /*顶部阴影*/
+  0 0 0 #FFF; /*底边阴影*/
+}
+.container-view .left .nav-item {
+  line-height: 40px;
+}
+.container-view .right {
+  padding: 32px 15px;
+  overflow: auto;
+  height: 100%;
+}
+
+.btn {
+  line-height: 1;
+  font-size: inherit;
+  background-color: #fff;
+  border: 1px solid #2297e5;
+  padding: 7px 9px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-primary {
+  color: #2297e5;
+}
+
+.btn-small {
+  font-size: 13px;
+}
+
+.btn:hover {
+  background-color: #90d4e5;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}

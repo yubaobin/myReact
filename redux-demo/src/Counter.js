@@ -5,9 +5,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 class Counter extends Component {
   static propTypes = {
-    value: PropTypes.number.isRequired,
-    add: PropTypes.func.isRequired,
-    min: PropTypes.func.isRequired,
+    store: PropTypes.object,
   }
   constructor(props) {
     console.log('Counter created');
@@ -16,13 +14,13 @@ class Counter extends Component {
   componentWillUpdate() {
     console.log('update');
   }
+
   render() {
-    const { value, add, min } = this.props;
     return (
       <div>
-        <h1>{value}</h1>
-        <button onClick={add}>+</button>
-        <button onClick={min}>-</button>
+        <h1>{this.props.store.getState()}</h1>
+        <button onClick={() => {this.props.store.dispatch({ type: 'ADD' })}}>+</button>
+        <button onClick={() => {this.props.store.dispatch({ type: 'MIN' })}}>-</button>
       </div>
     )
   }

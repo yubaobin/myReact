@@ -10,10 +10,7 @@ import logger from 'redux-logger';
 const store = createStore(Reducer, applyMiddleware(logger));
 
 const render = () => ReactDOM.render(
-  <Counter
-    value = {store.getState()}
-    add={() => store.dispatch({type:'ADD'})}
-    min={() => store.dispatch({type:'MIN'})}/>,
+  <Counter store = {store} />,
   document.getElementById('root'));
 render();
 store.subscribe(render);

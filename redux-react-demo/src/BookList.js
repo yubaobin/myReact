@@ -55,6 +55,9 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(BookAction, dispatch);
+  // return {
+  //   addBook: () => dispatch({ type: ActionType.ADD_BOOK })
+  // }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);

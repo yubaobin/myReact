@@ -21,27 +21,44 @@ class Book extends Component {
     this.props.router.push('/');
   }
   render() {
-    return <div>
-             <h1 onClick={this.toApp.bind(this)}>真首页</h1>
-             <h1><Link to="/book" activeClassName="active" onlyActiveOnIndex={ true }>首页onlyActiveOnIndex</Link></h1>
-             <h1><IndexLink to="/book" activeClassName="active" >首页IndexLink</IndexLink></h1>
-             <ul>{
+    return (
+          <div className="book-view">
+             <div className="back" onClick={this.toApp.bind(this)}>返回首页</div>
+             <div>下面是book页面的tab页</div>
+             <div>使用this.props.children得到</div>
+             <div>(默认tab页使用IndexRoute标签定义组件)</div>
+             <div className="book-tab">
+               <div>
+                 <Link to="/book" activeClassName="active" onlyActiveOnIndex={ true }>
+                   默认tab页(使用onlyActiveOnIndex属性高亮)
+                 </Link>
+               </div>
+               <div>
+                 <IndexLink to="/book" activeClassName="active" >
+                   默认tab页(使用IndexLink标签高亮)
+                 </IndexLink>
+               </div>
+               <ul className="book-list">{
                this.props.bookList.map((item, index) =>
-                 <Link to={ '/detail/'+item.id } key={index} activeClassName="active">{item.name}</Link>)
-            }</ul>
-           <div className="detail">
-             { this.props.children }
-           </div>
-           </div>
+                 <li key={index}>
+                   <Link to={ '/detail/'+item.id } activeClassName="active">{item.name}</Link>
+                 </li>)
+               }</ul>
+              <div className="detail">
+              { this.props.children }
+              </div>
+             </div>
+          </div>
+        )
   }
 }
 Book.defaultProps = {
   bookList: [{
     id: 1,
-    name: '思考人生'
+    name: '书本1'
   }, {
     id: 2,
-    name: '思考人生-exrend'
+    name: '书本2'
   }],
 }
 export default Book;

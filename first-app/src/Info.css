@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --bookwidth: 400px;
+}
+ul, li {
+    list-style-type: none;
+}
+.book-view .back {
+    cursor: pointer;
+}
+
+.book-view .book-tab {
+    width: var(--bookwidth);
+    margin: 0 auto;
+}

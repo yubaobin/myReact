@@ -1,0 +1,62 @@
+.book-list {
+    color: #4c4b4b;
+}
+.book-list ul{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.book-list ul li {
+    position: relative;
+    width: 190px;
+    height: 200px;
+    margin: 3px;
+    padding-top: 20px;
+    border: 3px solid #CDCDCD;
+    box-shadow: 0 0 2px #979797;
+    transition: all 1s;
+    text-align: center;
+    font-weight: bold;
+}
+
+.book-list ul li:hover {
+    box-shadow: 0 0 15px #1780e5;
+}
+
+.book-list ul li:hover .cover {
+    display: inline-block;
+}
+.book-list ul li .cover {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(34,151,229,.6);
+}
+
+.book-list ul li .cover .btn-group {
+    position: relative;
+    top: 40%;
+}
+
+.book-list ul li .cover .btn-group button {
+    padding: 5px 10px;
+    outline: none;
+    margin: 3px;
+    cursor: pointer;
+    border: 1px solid #478bc5;
+    background-color: #2297e5;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.book-list ul li .cover .btn-group button:hover {
+    border: 3px solid #478bc5;
+    transition: all .1s;
+}

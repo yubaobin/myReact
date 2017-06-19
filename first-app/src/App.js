@@ -26,7 +26,7 @@ class App extends Component {
         </div>
         <button onClick={this.moveUp.bind(this)}>⬆</button>
         <button onClick={this.moveDown.bind(this)}>⬇</button>
-        <div><Link to="/book">书本</Link></div>
+        <div><Link to="/book">跳转的书本页面</Link></div>
       </div>
     );
   }
