@@ -75,7 +75,7 @@ input:focus {
   padding: 15px 10px;
   margin: 10px;
   height: 100%;
-  box-shadow:-10px 0 10px #CDCDCD, /*左边阴影*/
+  box-shadow: -10px 0 10px #CDCDCD, /*左边阴影*/
   10px 0 10px #CDCDCD, /*右边阴影*/
   0 0 0 #FFF, /*顶部阴影*/
   0 0 0 #FFF; /*底边阴影*/
