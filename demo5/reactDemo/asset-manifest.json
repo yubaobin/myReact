@@ -1,0 +1,10 @@
+{
+  "main.css": "/reactDemo/static/css/main.e2639a48.chunk.css",
+  "main.js": "/reactDemo/static/js/main.08e6a6ef.chunk.js",
+  "static/js/1.0b381f03.chunk.js": "/reactDemo/static/js/1.0b381f03.chunk.js",
+  "runtime~main.js": "/reactDemo/static/js/runtime~main.fc854b90.js",
+  "static/media/logo.svg": "/reactDemo/static/media/logo.5d5d9eef.svg",
+  "index.html": "/reactDemo/index.html",
+  "precache-manifest.4e91f9b011c0a24bcb78d7c50bf8ed94.js": "/reactDemo/precache-manifest.4e91f9b011c0a24bcb78d7c50bf8ed94.js",
+  "service-worker.js": "/reactDemo/service-worker.js"
+}

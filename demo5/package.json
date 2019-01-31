@@ -7,21 +7,23 @@
     "react-dom": "^16.7.0"
   },
   "devDependencies": {
+    "react-app-polyfill": "^0.2.0",
     "react-scripts": "2.1.3"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && rm -rf reactDemo  && mv build reactDemo",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "homepage": "demo",
   "browserslist": [
     ">0.2%",
     "not dead",
-    "not ie <= 11",
+    "not ie <= 9",
     "not op_mini all"
   ]
 }
