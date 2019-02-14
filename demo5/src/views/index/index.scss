@@ -1,0 +1,28 @@
+.game {
+  display: flex;
+  align-items: flex-start;
+  .game-board {
+    padding: 10px;
+  }
+  .game-info {
+    padding: 10px;
+    .game-result {
+      margin-bottom: 10px;
+    }
+    .history-list {
+      margin: 0 -5px;
+      li {
+        padding: 3px 5px;
+        margin: 0 5px 5px;
+        cursor: pointer;
+        background-color: #EEE;
+        color: #333;
+        border: 1px solid #333;
+        border-radius: 5px;
+        &:hover {
+          background-color: #DDD;
+        }
+      }
+    }
+  }
+}
