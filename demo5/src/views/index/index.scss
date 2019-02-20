@@ -1,6 +1,10 @@
+@import 'styles/variables';
 .game {
   display: flex;
   align-items: flex-start;
+  .header {
+
+  }
   .game-board {
     padding: 10px;
   }
@@ -25,4 +29,8 @@
       }
     }
   }
+}
+
+@media screen and (max-width: $mobile) {
+
 }
