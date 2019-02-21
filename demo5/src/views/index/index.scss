@@ -1,4 +1,3 @@
-@import 'styles/variables';
 .game {
   display: flex;
   align-items: flex-start;
@@ -29,8 +28,4 @@
       }
     }
   }
-}
-
-@media screen and (max-width: $mobile) {
-
 }

@@ -7,7 +7,7 @@ export default class App extends Component {
     super();
     this.state = {
       history: [{
-        squares: Array(9).fill(null),
+        squares: [null, null, null, null, null, null, null, null, null],
         xIsNext: true
       }],
       stepNumber: 0

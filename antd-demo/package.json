@@ -1,0 +1,39 @@
+{
+  "name": "antd-demo",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.13.5",
+    "babel-plugin-import": "^1.11.0",
+    "console-polyfill": "^0.3.0",
+    "nprogress": "^0.2.0",
+    "react": "^16.8.2",
+    "react-app-polyfill": "^0.2.1",
+    "react-dom": "^16.8.2"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "customize-cra": "^0.2.11",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "react-app-rewired": "^2.1.0",
+    "react-scripts": "2.1.5"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "build_demo": "env-cmd .env.staging react-app-rewired build && rm -rf reactDemo  && mv build reactDemo",
+    "test": "react-app-rewired test"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "ie >= 9",
+    "Android >= 3.2",
+    "iOS >= 7"
+  ]
+}
