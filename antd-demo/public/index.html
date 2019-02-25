@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
     <meta name="theme-color" content="#000000" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -21,29 +21,26 @@
     -->
     <title>React App</title>
     <script>
-      (function () {
-        var method;
-        var noop = function () { };
-        var methods = [
-          'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-          'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-          'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-          'timeline', 'timelineEnd', 'timeStamp', 'trace', 'warn'
-        ];
-        var length = methods.length;
-        var console = (window.console = window.console || {});
-        while (length--) {
-          method = methods[length];
-          if (!console[method]) {
-            console[method] = noop;
-          }
+      (function(global) {
+        'use strict';
+        if (!global.console) {
+          global.console = {};
         }
-      }());
+        var con = global.console;
+        var prop, method;
+        var dummy = function() {};
+        var properties = ['memory'];
+        var methods = ('assert,clear,count,debug,dir,dirxml,error,exception,group,' +
+          'groupCollapsed,groupEnd,info,log,markTimeline,profile,profiles,profileEnd,' +
+          'show,table,time,timeEnd,timeline,timelineEnd,timeStamp,trace,warn').split(',');
+        while (prop = properties.pop()) if (!con[prop]) con[prop] = {};
+        while (method = methods.pop()) if (!con[method]) con[method] = dummy;
+      })(typeof window === 'undefined' ? this : window);
     </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="App"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

@@ -5,8 +5,9 @@
   "dependencies": {
     "antd": "^3.13.5",
     "babel-plugin-import": "^1.11.0",
-    "console-polyfill": "^0.3.0",
+    "classnames": "^2.2.6",
     "nprogress": "^0.2.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.2",
     "react-app-polyfill": "^0.2.1",
     "react-dom": "^16.8.2"

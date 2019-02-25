@@ -1,7 +1,7 @@
 const { override, fixBabelImports, addLessLoader, addWebpackAlias } = require('customize-cra');
 const { paths } = require('react-app-rewired');
 const path = require('path');
-const variables = require('./src/config/variables');
+const variables = require('./src/utils/variables');
 module.exports = override(
   fixBabelImports('import', {
     libraryName: 'antd',
@@ -10,6 +10,7 @@ module.exports = override(
   }),
   addLessLoader({
     javascriptEnabled: true,
+    modules: true,
     modifyVars: variables
   }),
   addWebpackAlias({

@@ -1,4 +1,4 @@
-const theme = require('./config').theme
+const theme = require('../config').theme
 module.exports = {
   '@primary-color': theme.primaryColor,                    // 全局主色
   '@success-color': theme.successColor,                    // 成功色
