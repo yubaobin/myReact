@@ -11,7 +11,6 @@ class LayoutWrapper extends Component {
       'layout-wrapper-full': fullHeight
     })
     React.Children.map(children, child => {
-      console.log(child.type === LayoutSide)
     })
     return (
       <div className={classes} style={styles}>{children}</div>
