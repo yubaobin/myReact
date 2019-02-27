@@ -1,7 +1,7 @@
 import './index.scss';
 import React, { Component } from 'react';
-
 import Board from 'views/Board'
+import Mouse from 'components/Mouse'
 export default class App extends Component {
   constructor () {
     super();
@@ -71,6 +71,9 @@ export default class App extends Component {
               })
             }
           </ul>
+          <Mouse width={200} height={100}>
+            { (mouse) => (`x:${mouse.x}, y:${mouse.y}`) }
+          </Mouse>
         </div>
       </div>
     );
