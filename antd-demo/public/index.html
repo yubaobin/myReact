@@ -41,6 +41,26 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="App"></div>
+    <input type="hidden" id="env" value=%NODE_ENV% />
+    <script>
+      if (document.getElementById('env').value === 'development') {
+        window.Map = window.Map || function () {
+          return {
+            set: function () {}
+          }
+        };
+        window.Set = window.Set || function () {
+          return {
+            set: function () {},
+            has: function () {}
+          }
+        };
+        Object.setPrototypeOf = Object.setPrototypeOf || function (obj, proto) {
+          obj.__proto__ = proto;
+          return obj;
+        };
+      }
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

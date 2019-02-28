@@ -2,7 +2,6 @@ import Loadable from 'react-loadable'
 import DelayLoading from '@/components/DelayLoading'
 
 const Home = Loadable({ loader: () => import('@/views/Home'), loading: DelayLoading })
-const Login = Loadable({ loader: () => import('@/views/Users/Login'), loading: DelayLoading })
 const Register = Loadable({ loader: () => import('@/views/Users/Register'), loading: DelayLoading })
 const Child = Loadable({ loader: () => import('@/views/Users/Child'), loading: DelayLoading })
 const Child2 = Loadable({ loader: () => import('@/views/Users/Child2'), loading: DelayLoading })
@@ -12,13 +11,10 @@ const routes = [{
   exact: true,
   component: Home
 }, {
-  path: '/login',
-  component: Login
-}, {
   path: '/register',
   component: Register,
   routes: [{
-    path: '/register/child',
+    path: '/register/child/:id',
     component: Child
   }, {
     path: '/register/child2',
