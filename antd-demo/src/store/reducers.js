@@ -1,8 +1,9 @@
-import { combineReducers } from 'redux'
-import bookState from '@/store/modules/book/reducer'
-import userState from '@/store/modules/user/reducer'
+import { combineReducers } from 'redux';
+import userState from '@/store/user/reducer';
+
+// 合并reducers
 const reducers = combineReducers({
-  bookState, userState
+  userState
 })
 
 export default reducers

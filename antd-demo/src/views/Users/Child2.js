@@ -1,23 +1,22 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as userAction from '@/store/modules/user/action'
+import * as userAction from '@/store/user/action'
 
 @connect(
-  state => ({ loginInfo: state.userState }),
+  state => ({ userState: state.userState  }),
   dispatch => bindActionCreators({ ...userAction }, dispatch)
 )
 class Child2 extends Component {
   render() {
-    const { loginInfo } = this.props
+    const { userState } = this.props
     return (
       <div>
-        <p>{ loginInfo.isLoading ?
-          'Loading' : (
-            loginInfo.msg ? loginInfo.msg : `book:${loginInfo.user.name}`
-          ) }
+        <p>{ userState.loginLoad ?
+          'Loading' : `userInfo: ${userState.userInfo.id}`
+          }
         </p>
-        <button onClick={() => this.props.userLogin()}>登陆</button>
+        <button onClick={() => this.props.userLogin({ username: 'test', password: 'test' })}>登陆</button>
       </div>
     )
   }

@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "antd": "^3.13.5",
+    "axios": "^0.18.0",
     "babel-plugin-import": "^1.11.0",
     "classnames": "^2.2.6",
+    "lscache": "^1.3.0",
     "nprogress": "^0.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.2",
@@ -43,5 +45,6 @@
     "ie >= 9",
     "Android >= 3.2",
     "iOS >= 7"
-  ]
+  ],
+  "proxy": "http://www.ybaob.com:8001"
 }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Switch } from 'react-router-dom';
-import SubRoutes from '@/routers'
+import SubRoutes from '@/components/SubRoutes'
 import Nav from '@/views/Users/Nav'
 class Register extends Component {
   render () {

@@ -2,6 +2,8 @@ const config = {
   appName: '',
   iconfontUrl: '',
   root: process.env.PUBLIC_URL,
+  sessionDuration: '', // sesstion过期时间
+  accessToken: '', // token的标示
   theme: { // 配置一些主要的颜色，其他可在variables中自行添加
     primaryColor: '#e30a20',                         // 全局主色
     successColor: '#52c41a',                         // 成功色
@@ -13,6 +15,8 @@ const config = {
     disabledColor: 'rgba(0, 0, 0, .25)',             // 失效色
     borderRadiusBase: '4px',                         // 组件/浮层圆角
     borderColorBase: '#d9d9d9'                       // 边框色
-  }
+  },
+  apiPath: process.env.REACT_APP_apiPath ? process.env.REACT_APP_apiPath : '',
+  baseUrl: '', // 系统前缀
 }
 module.exports = config
