@@ -1,5 +1,5 @@
 import lscache from 'lscache'
-import config from '../config'
+import config from '@/config'
 
 export default (() => {
   const TOKEN = config.accessToken || 'token'
@@ -66,14 +66,12 @@ export default (() => {
     },
     query2params (query) {
       if (typeof query !== 'string') return {}
-      let param = {}
-      let params
-      let kv
-      params = query.split('&')
+      let param = {};
+      let params = query.split('&');
       for (let i = 0, len = params.length; i < len; i++) {
-        if (!params[i]) continue
-        kv = params[i].split('=')
-        if (kv[0] && kv[1]) param[kv[0]] = kv[1]
+        if (!params[i]) continue;
+        const kv = params[i].split('=');
+        if (kv[0] && kv[1]) param[kv[0]] = kv[1];
       }
       return param
     },
