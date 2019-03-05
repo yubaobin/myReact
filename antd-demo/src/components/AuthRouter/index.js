@@ -33,9 +33,11 @@ const RouteItem = (props) => {
     exact = false,
     strict = false,
     routes = [],
-    type,
-    redirect
+    type = '200',
+    redirect,
+    title = ''
   } = props;
+  if (title) document.title = title
   if (type === '404') {
     return (<Route component={RendComponent} />)
   } else if (redirect) {
@@ -59,12 +61,13 @@ const mapStateToProps = (state) => {
 }
 
 AuthRouter.propTypes  ={
-  path: PropTypes.string.isRequired,
+  path: PropTypes.string,
   exact: PropTypes.bool,
   strict: PropTypes.bool,
   component: PropTypes.func,
   type: PropTypes.string,
-  redirect: PropTypes.string
+  redirect: PropTypes.string,
+  title: PropTypes.string
 }
 
 export default withRouter(connect(mapStateToProps)(AuthRouter));

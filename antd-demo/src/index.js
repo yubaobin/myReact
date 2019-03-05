@@ -1,7 +1,7 @@
 import 'react-app-polyfill/ie9';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import '@/styles/common.less';
+import '@/styles/global.less';
 import * as serviceWorker from './serviceWorker';
 
 import { BrowserRouter, Switch } from 'react-router-dom'

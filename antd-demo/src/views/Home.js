@@ -1,20 +1,36 @@
 import React, {Component} from 'react';
-import { NavLink, Switch } from 'react-router-dom'
-import AuthRouter from '@/components/AuthRouter'
+import AdminLayout from '@/views/layout/AdminLayout'
+
 class Home extends Component {
+  getMenuList() {
+    return [{
+      id: 1,
+      name: '菜单一',
+      path: '/Child',
+      children: [{
+        name: '子菜单一',
+        path: '/Child/Child/234',
+      }, {
+        name: '子菜单二',
+        path: '/Child/child2'
+      }]
+    }, {
+      id: 2,
+      name: '菜单二',
+      path: '/Child2',
+      children: [{
+        name: '子菜单一',
+        path: '/Child2/Child/234',
+      }, {
+        name: '子菜单二',
+        path: '/Child2/child2'
+      }]
+    }]
+  }
   render () {
-    const { routes } = this.props
+    const menuList = this.getMenuList()
     return (
-      <div>
-        <p>home</p>
-        <ul>
-          <li><NavLink to="/home/child/123">child</NavLink></li>
-          <li><NavLink to="/home/child2">child2</NavLink></li>
-        </ul>
-        <Switch>
-          { routes.map((route, index) => <AuthRouter key={index} {...route} ></AuthRouter>) }
-        </Switch>
-      </div>
+      <AdminLayout menuList={menuList} {...this.props} />
     )
   }
 }

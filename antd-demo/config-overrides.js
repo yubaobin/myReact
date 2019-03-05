@@ -13,6 +13,7 @@ module.exports = override(
   addLessLoader({
     javascriptEnabled: true,
     modules: true,
+    paths: [path.resolve(__dirname, paths.appSrc), path.resolve(__dirname, 'node_modules')],
     modifyVars: variables
   }),
   addWebpackAlias({

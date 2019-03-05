@@ -1,0 +1,17 @@
+.basic-layout {
+  position: relative;
+  .layout-side {
+    position: absolute;
+    top: @layout-header-height;
+    left: 0px;
+    bottom: 0px;
+    width: @menu-width;
+  }
+  .layout-body {
+    position: absolute;
+    top: @layout-header-height;
+    left: @menu-width;
+    right: 0px;
+    bottom: 0px;
+  }
+}

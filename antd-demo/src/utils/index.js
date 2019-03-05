@@ -15,12 +15,21 @@ export default (() => {
       for (var key in obj) return false
       return true
     },
+    isUrl(path) {
+      /* eslint no-useless-escape:0 */
+      const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/;
+      return reg.test(path);
+    },
+    urlToList(url) {
+      const urllist = url.split('/').filter(i => i);
+      return urllist.map((urlItem, index) => `/${urllist.slice(0, index + 1).join('/')}`);
+    },
     /**
      * 获取登录剩余时间秒数
      * @returns {number}
      */
     getLoginRemainingTime () {
-      let loginTime = Math.ceil(+lscache.get(LOGIN_TIME) / 1000)
+      const loginTime = Math.ceil(+lscache.get(LOGIN_TIME) / 1000)
       return (config.sessionDuration || 30 * 60 * 1000) / 1000 - (Math.ceil(Date.now() / 1000) - loginTime)
     },
     /**
