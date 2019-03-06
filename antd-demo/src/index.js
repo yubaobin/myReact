@@ -8,6 +8,7 @@ import { BrowserRouter, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import routes from '@/routers'
 import AuthRouter from '@/components/AuthRouter'
+import config from '@/config'
 import store from '@/store'
 
 
@@ -15,7 +16,7 @@ class App extends Component {
   render () {
     return (
       <Provider store={store}>
-        <BrowserRouter className="container">
+        <BrowserRouter className="container" basename={config.root}>
           <Switch>
             {routes.map((route, index) => <AuthRouter key={index} {...route} ></AuthRouter>)}
           </Switch>

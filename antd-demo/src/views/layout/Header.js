@@ -37,8 +37,8 @@ class Header extends Component {
               </Badge>
             </Menu.Item>
             <SubMenu key="item4" title={<div className="header-wrapper"><img className="layout-header-avatar" src={avatar} alt="头像" />user</div>}>
-              <Menu.Item key="setting:1">个人中心</Menu.Item>
-              <Menu.Item key="setting:2">个人设置</Menu.Item>
+              <Menu.Item key="setting:5">个人中心</Menu.Item>
+              <Menu.Item key="setting:6">个人设置</Menu.Item>
             </SubMenu>
           </Menu>
         </div>

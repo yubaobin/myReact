@@ -7,12 +7,11 @@ import config from '@/config'
 /* eslint-disable prefer-promise-reject-errors */
 let instance = axios.create({
   method: 'post',
-  withCredentials: true,
+  // withCredentials: true,
   timeout: 6000,
   headers: {
     'Accept': '*',
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*'
+    'Content-Type': 'application/json'
   }
 })
 // 拦截请求

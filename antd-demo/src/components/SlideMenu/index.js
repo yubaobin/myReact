@@ -4,8 +4,6 @@ import { withRouter } from 'react-router-dom'
 import SliderMenu from './SlideMenu'
 import { getFlatMenuKeys } from './SlideMenuUtil'
 
-import './index.less'
-
 
 @withRouter
 class SlideMenuContainer extends Component {
@@ -23,7 +21,6 @@ class SlideMenuContainer extends Component {
     return (
       <SliderMenu
         flatMenuKeys={flatMenuKeys}
-        openKeys={this.state.openKeys}
         {...this.props}
       />
     )

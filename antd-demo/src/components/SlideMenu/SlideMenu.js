@@ -1,11 +1,11 @@
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
-import { Menu, Icon, Button } from 'antd';
+import { Menu, Icon } from 'antd';
 import { Link } from 'react-router-dom'
 import IconFont from '@/components/IconFont';
 import utils from '@/utils'
 import { getMenuMatches, getDefaultCollapsedSubMenus } from './SlideMenuUtil'
-import './index.less'
+import './SlideMenu.less'
 
 const SubMenu = Menu.SubMenu;
 
@@ -26,18 +26,10 @@ class SlideMenu extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      collapsed: false,
       openKeys: getDefaultCollapsedSubMenus(props)
     }
-    this.toggleCollapsed = this.toggleCollapsed.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleOpenChange = this.handleOpenChange.bind(this);
-  }
-
-  toggleCollapsed() {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
   }
 
   handleClick(item) {
@@ -129,26 +121,29 @@ class SlideMenu extends Component {
   }
 
   render() {
-    const { menuList, location, openKeys } = this.props
+    const { menuList, location, collapsed } = this.props
+    const { openKeys } = this.state
     const pathname = location.pathname
-
     let selectedKeys = this.getSelectedMenuKeys(pathname);
     if (!selectedKeys.length && openKeys) {
       selectedKeys = [openKeys[openKeys.length - 1]];
     }
+    let props = {};
+    if (openKeys && !collapsed) {
+      props = {
+        openKeys: openKeys.length === 0 ? [...selectedKeys] : openKeys,
+      };
+    }
     return (
       <Fragment>
-        <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
-          <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
-        </Button>
         <Menu
           mode="inline"
           className="slide-menu"
-          inlineCollapsed={this.state.collapsed}
+          inlineCollapsed={collapsed}
           onClick={this.handleClick}
-          openKeys={this.state.openKeys}
           selectedKeys={selectedKeys}
-          onOpenChange={this.handleOpenChange}>
+          onOpenChange={this.handleOpenChange}
+          {...props}>
           {this.getNavMenuItems(menuList)}
         </Menu>
       </Fragment>

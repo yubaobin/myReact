@@ -34,7 +34,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "build_demo": "env-cmd .env.staging react-app-rewired build && rm -rf reactDemo  && mv build reactDemo",
+    "build_demo": "react-app-rewired build && rm -rf antDemo  && mv build antDemo",
     "test": "react-app-rewired test"
   },
   "eslintConfig": {
