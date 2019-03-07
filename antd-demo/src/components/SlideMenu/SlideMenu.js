@@ -14,7 +14,7 @@ const getIcon = icon => {
     if (utils.isUrl(icon)) {
       return <Icon component={() => <img src={icon} alt="icon" className='icon' />} />;
     }
-    if (icon.startsWith('icon-')) {
+    if (icon.indexOf('icon-') !== -1) {
       return <IconFont type={icon} />;
     }
     return <Icon type={icon} />;
