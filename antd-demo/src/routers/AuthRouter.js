@@ -1,17 +1,23 @@
-import React, { Component } from 'react'
-import { Route, withRouter, Redirect } from 'react-router-dom'
-import { connect } from 'react-redux'
+/**
+ * 权限的路由，主要根据redux保存的用户信息判断是否有权限
+ */
+import React, { Component } from 'react';
+import { Route, withRouter, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import config from '@/config'
+
+const TOKEN = config.accessToken
 
 class AuthRouter extends Component {
   componentWillMount () {
-    const { userState, history, auth } = this.props;
-    const isAuthenticated = auth ? (userState.isLogin && userState.actionToken) : true
+    const { userState, history, location, auth, onFailAuth } = this.props;
+    const isAuthenticated = auth ? (userState[TOKEN]) : true
     this.setState({
       isAuthenticated
     })
     if (!isAuthenticated) {
-      history.replace("/login")
+      onFailAuth && onFailAuth(history, location)
     }
   }
   render () {
@@ -19,7 +25,7 @@ class AuthRouter extends Component {
     if (auth) {
       return this.state.isAuthenticated ? (
         <RouteItem { ...this.props } />
-      ) : null
+      ) : (<Redirect to="/user/login" />)
     } else {
       return (<RouteItem { ...this.props } />)
     }
@@ -67,7 +73,8 @@ AuthRouter.propTypes  ={
   component: PropTypes.func,
   type: PropTypes.string,
   redirect: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
+  onFailAuth: PropTypes.func
 }
 
 export default withRouter(connect(mapStateToProps)(AuthRouter));

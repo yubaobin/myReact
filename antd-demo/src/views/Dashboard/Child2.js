@@ -16,7 +16,6 @@ class Child2 extends Component {
           'Loading' : `userInfo: ${userState.userInfo.id}`
           }
         </p>
-        <button onClick={() => this.props.userLogin({ username: 'test', password: 'test' })}>登陆</button>
       </div>
     )
   }

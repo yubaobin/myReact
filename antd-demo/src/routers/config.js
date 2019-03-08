@@ -11,7 +11,7 @@
  * }
  */
 import Loadable from 'react-loadable';
-import RouteLayout from '@/views/layout/RouteLayout'
+import BaseRouter from './BaseRouter'
 import DelayLoading from '@/components/DelayLoading';
 import Page404 from '@/views/404'
 
@@ -22,7 +22,7 @@ const Child2 = Loadable({ loader: () => import('@/views/Dashboard/Child2'), load
 
 const routes = [{
   path: '/user',
-  component: RouteLayout,
+  component: BaseRouter,
   routes: [{
     path: '/user/login',
     component: Login
@@ -32,7 +32,8 @@ const routes = [{
   component: Home,
   routes: [{
     path: '/Child',
-    component: RouteLayout,
+    auth: true,
+    component: BaseRouter,
     routes: [{
       path: '/Child/Child/:id',
       component: Child
@@ -42,7 +43,8 @@ const routes = [{
     }]
   }, {
     path: '/Child2',
-    component: RouteLayout,
+    auth: true,
+    component: BaseRouter,
     routes: [{
       path: '/Child2/Child/:id',
       component: Child

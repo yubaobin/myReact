@@ -2,7 +2,8 @@
  *  根据action返回新的state更新试图
  */
 
-import { LOGIN_BEFORE, LOGIN_COMPLETE, LOGIN_FAIL  } from './action-type'
+import * as actionType from './actionType';
+
 import config from '@/config'
 
 const TOKEN = config.accessToken || 'token'
@@ -13,31 +14,32 @@ const TOKEN = config.accessToken || 'token'
 
 const initUserState = {
   userInfo: {},
-  isLogin: false,
+  remainTime: 0,
+  token: '',
   loginLoad: false,
-  loginTime: null,
-  actionToken: ''
+  errMsg: ''
 };
-
-export { initUserState };
 
 export default (state = initUserState, action) => {
   switch (action.type) {
-    case LOGIN_BEFORE: // 请求之前
-      return Object.assign({}, state, { userInfo: {}, isLogin: false, loginLoad: true, loginTime: null });;
+    case actionType.loading:
+      return Object.assign({}, state, { loginLoad: true });
 
-    case LOGIN_COMPLETE: // 请求完成
-      const data = action.data.data;
+    case actionType.fail:
+      return Object.assign({}, state, { loginLoad: false, errMsg: action.error });
+
+    case actionType.logout:
+      return Object.assign({}, state, initUserState )
+
+    case actionType.loginSuccess:
+      const data = action.data;
+      const remainTime = action.remainTime
       return Object.assign({}, state, {
         userInfo: data,
-        isLogin: true,
         loginLoad: false,
-        loginTime: Date.now(),
-        actionToken: data[TOKEN]
+        remainTime: remainTime,
+        token: data[TOKEN]
       });
-
-    case LOGIN_FAIL: // 请求失败
-      return Object.assign({}, state, { userInfo: {}, isLogin: false, loginLoad: false, loginTime: null });;
 
     default:
       return state;

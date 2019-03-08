@@ -21,7 +21,7 @@ class Child extends Component {
     return (
       <div>
         <p>ChildId: {this.props.match.params.id}</p>
-        <button onClick={this.update}>更新book</button>
+        <button onClick={this.update}>更新book3</button>
         { aircle.name }
       </div>
     )

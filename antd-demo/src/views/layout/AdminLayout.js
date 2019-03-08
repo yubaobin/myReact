@@ -2,12 +2,11 @@
  * 基本布局
  */
 import React, {Component} from 'react';
-import { Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Button, Icon } from 'antd';
 import classnames from 'classnames'
-import AuthRouter from '@/components/AuthRouter';
 import SlideMenu from '@/components/SlideMenu';
+import BaseRouter from '@/routers/BaseRouter'
 import Header from './Header'
 import './AdminLayout.less'
 
@@ -48,9 +47,7 @@ class BasicLayout extends Component {
             <SlideMenu { ...other } collapsed={collapsed} toggleCollapsed={this.toggleCollapsed} />
           </div>
           <div className={bodyClass}>
-            <Switch>
-              {routes.map((route, index) => <AuthRouter key={index} {...route} {...other} />)}
-            </Switch>
+            <BaseRouter routes={routes} { ...other } />
           </div>
         </div>
       </div>

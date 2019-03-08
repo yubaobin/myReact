@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import { Switch } from 'react-router-dom';
-import AuthRouter from '@/components/AuthRouter';
+import AuthRouter from './AuthRouter';
 
 class NormalLayout extends Component {
   render() {

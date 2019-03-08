@@ -3,7 +3,10 @@
  */
 import React, {Component} from 'react';
 import { Menu, Badge } from 'antd';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import IconFont from '@/components/IconFont';
+import * as userAction from '@/store/user/action'
 import logo from '@/assets/logo.png';
 import avatar from '@/assets/usertx.jpg'
 import './Header.less';
@@ -11,7 +14,18 @@ import './Header.less';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
+@connect(
+  state => ({ userState: state.userState }),
+  dispatch => bindActionCreators({ ...userAction }, dispatch)
+)
 class Header extends Component {
+  constructor() {
+    super();
+    this.logout = this.logout.bind(this);
+  }
+  logout () {
+    this.props.userLogout()
+  }
   render() {
     return (
       <div className="layout-header">
@@ -39,6 +53,7 @@ class Header extends Component {
             <SubMenu key="item4" title={<div className="header-wrapper"><img className="layout-header-avatar" src={avatar} alt="头像" />user</div>}>
               <Menu.Item key="setting:5">个人中心</Menu.Item>
               <Menu.Item key="setting:6">个人设置</Menu.Item>
+              <Menu.Item key="setting:7" onClick={this.logout}>退出登录</Menu.Item>
             </SubMenu>
           </Menu>
         </div>

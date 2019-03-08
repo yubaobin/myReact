@@ -4,23 +4,19 @@ import ReactDOM from 'react-dom';
 import '@/styles/global.less';
 import * as serviceWorker from './serviceWorker';
 
-import { BrowserRouter, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import routes from '@/routers'
-import AuthRouter from '@/components/AuthRouter'
-import config from '@/config'
-import store from '@/store'
-
+import { ConnectedRouter } from 'connected-react-router'
+import routes from '@/routers/config'
+import BaseRouter from '@/routers/BaseRouter'
+import store, { history } from '@/store'
 
 class App extends Component {
   render () {
     return (
       <Provider store={store}>
-        <BrowserRouter className="container" basename={config.root}>
-          <Switch>
-            {routes.map((route, index) => <AuthRouter key={index} {...route} ></AuthRouter>)}
-          </Switch>
-        </BrowserRouter>
+        <ConnectedRouter history={history}>
+          <BaseRouter routes={routes} />
+        </ConnectedRouter>
       </Provider>
     )
   }
@@ -35,4 +31,7 @@ if (module.hot) {
     const nextCombineReducers = require('./store/reducers').default;
     store.replaceReducer(nextCombineReducers);
   });
+  module.hot.accept(App, () => {
+    ReactDOM.render(<App />, document.getElementById('App'));
+  })
 }

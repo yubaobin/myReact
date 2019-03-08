@@ -2,14 +2,16 @@
  *  用户通过dispatch出发action，action通过reduce函数更新state，更新视图
  */
 
-import { LOGIN_BEFORE, LOGIN_COMPLETE, LOGIN_FAIL  } from './action-type';
-import { loginApi } from '@/api';
-import doAction from '@/store/utils';
-import utils from '@/utils';
+import * as actionType from './actionType';
+export const userLogin = (params) => {
+  return {
+    type: actionType.loginAction,
+    payload: params
+  }
+}
 
-export const userLogin = (params) => (dispatch) => {
-  const actionTpyes = { before: LOGIN_BEFORE, complete: LOGIN_COMPLETE, fail: LOGIN_FAIL }
-  doAction({ actionTpyes, params, api: loginApi }, dispatch).then(res => {
-    utils.setUserInfoToCache(res.data)
-  })
+export const userLogout = () => {
+  return {
+    type: actionType.logoutAction
+  }
 }
