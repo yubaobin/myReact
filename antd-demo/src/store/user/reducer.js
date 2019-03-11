@@ -28,7 +28,7 @@ export default (state = initUserState, action) => {
     case actionType.fail:
       return Object.assign({}, state, { loginLoad: false, errMsg: action.error });
 
-    case actionType.logout:
+    case actionType.logoutSuccess:
       return Object.assign({}, state, initUserState )
 
     case actionType.loginSuccess:

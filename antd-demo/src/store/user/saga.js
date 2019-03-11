@@ -23,7 +23,7 @@ function* userLogin(action) {
 
 function* userLogout() {
   utils.removeUserInfoFromCache();
-  yield put({ type: actionType.logout })
+  yield put({ type: actionType.logoutSuccess })
   yield put(replace('/user/login'))
 }
 

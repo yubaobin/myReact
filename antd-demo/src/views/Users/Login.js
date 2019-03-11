@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Form, Icon, Input, Button, Checkbox } from 'antd'
 import * as userAction from '@/store/user/action'
+import './Login.less'
 
 @connect(
   '',
@@ -19,9 +21,10 @@ class Login extends Component {
   }
   render () {
     return (
-      <div>
-        <p>登陆222</p>
-        <button onClick={this.login}>登陆</button>
+      <div className="login-wrapper">
+        <div className="login-container">
+
+        </div>
       </div>
     )
   }
