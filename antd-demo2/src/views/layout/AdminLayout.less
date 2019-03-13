@@ -1,0 +1,38 @@
+.basic-layout {
+  position: relative;
+  height: 100%;
+  .layout-side {
+    position: absolute;
+    top: @layout-header-height;
+    left: 0px;
+    bottom: 0px;
+    width: @menu-width;
+    background-color: @menu-bg;
+    border-right: 1px solid #e8e8e8;
+    transition: background 0.3s, width 0.2s;
+    &-collapsed {
+      width: @menu-collapsed-width;
+      .ant-menu-inline-collapsed {
+        width: 100%;
+      }
+    }
+    .menu-control {
+      text-align: right;
+      padding: 3px 10px;
+    }
+    .ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+      border-right: none;
+    }
+  }
+  .layout-body {
+    position: absolute;
+    top: @layout-header-height;
+    left: @menu-width;
+    right: 0px;
+    bottom: 0px;
+    transition: background 0.3s, left 0.2s;
+    &-collapsed {
+      left: @menu-collapsed-width;
+    }
+  }
+}

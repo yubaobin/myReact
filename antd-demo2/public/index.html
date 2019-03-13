@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>React App</title>
+    <script>
+      (function(global) {
+        'use strict';
+        if (!global.console) {
+          global.console = {};
+        }
+        var con = global.console;
+        var prop, method;
+        var dummy = function() {};
+        var properties = ['memory'];
+        var methods = ('assert,clear,count,debug,dir,dirxml,error,exception,group,' +
+          'groupCollapsed,groupEnd,info,log,markTimeline,profile,profiles,profileEnd,' +
+          'show,table,time,timeEnd,timeline,timelineEnd,timeStamp,trace,warn').split(',');
+        while (prop = properties.pop()) if (!con[prop]) con[prop] = {};
+        while (method = methods.pop()) if (!con[method]) con[method] = dummy;
+      })(typeof window === 'undefined' ? this : window);
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="App"></div>
+    <input type="hidden" id="env" value=%NODE_ENV% />
+    <script>
+      if (document.getElementById('env').value === 'development') {
+        window.Map = window.Map || function () {
+          return {
+            set: function () {}
+          }
+        };
+        window.Set = window.Set || function () {
+          return {
+            set: function () {},
+            has: function () {}
+          }
+        };
+        Object.setPrototypeOf = Object.setPrototypeOf || function (obj, proto) {
+          obj.__proto__ = proto;
+          return obj;
+        };
+      }
+    </script>
+  </body>
+</html>
