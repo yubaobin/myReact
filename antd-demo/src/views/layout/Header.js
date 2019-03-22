@@ -2,7 +2,7 @@
  *  头部内容
  */
 import React, {Component} from 'react';
-import { Menu, Badge } from 'antd';
+import { Menu, Badge } from 'ybbtestui1';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import IconFont from '@/components/IconFont';

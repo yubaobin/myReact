@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { Button, Icon } from 'antd';
+import { Button, Icon } from 'ybbtestui1';
 import classnames from 'classnames'
 import SlideMenu from '@/components/SlideMenu';
 import BaseRouter from '@/routers/BaseRouter'

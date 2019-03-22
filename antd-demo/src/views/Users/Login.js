@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Form, Icon, Input, Button, Checkbox } from 'antd'
+import { Form, Icon, Input, Button, Checkbox } from 'ybbtestui1'
 import * as userAction from '@/store/user/action'
 import './Login.less'
 
@@ -23,7 +23,8 @@ class Login extends Component {
     return (
       <div className="login-wrapper">
         <div className="login-container">
-
+          <Input />
+          <Button >1231</Button>
         </div>
       </div>
     )

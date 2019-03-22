@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom'
 import SliderMenu from './SlideMenu'
 import { getFlatMenuKeys } from './SlideMenuUtil'
 
 
-@withRouter
 class SlideMenuContainer extends Component {
   constructor(props) {
     super(props);

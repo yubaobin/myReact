@@ -6,7 +6,7 @@ const variables = require('./src/utils/variables');
 module.exports = override(
   addBabelPlugin(['@babel/plugin-proposal-decorators', { "legacy": true }]),
   fixBabelImports('import', {
-    libraryName: 'antd',
+    libraryName: 'ybbtestui1',
     libraryDirectory: 'es',
     style: true
   }),

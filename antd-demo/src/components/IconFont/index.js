@@ -1,4 +1,4 @@
-import { Icon } from 'antd';
+import { Icon } from 'ybbtestui1';
 import { iconfontUrl, root } from '@/config';
 
 // 使用：
