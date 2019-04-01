@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Form, Icon, Input, Button, Checkbox } from 'ybbtestui1'
+import { Form, Icon, Input, Button, Checkbox, ButtonPlus, message } from 'ybbtestui1'
 import * as userAction from '@/store/user/action'
 import './Login.less'
 
@@ -25,6 +25,7 @@ class Login extends Component {
         <div className="login-container">
           <Input />
           <Button >1231</Button>
+          <ButtonPlus type="del" onClick={() => message.success('删除成功')}>删除</ButtonPlus>
         </div>
       </div>
     )
