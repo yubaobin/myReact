@@ -1,4 +1,4 @@
-import { Icon } from 'antd';
+import { Icon } from 'pantui';
 import { iconfontUrl, root } from '@/config';
 
 // 使用：

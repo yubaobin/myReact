@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
-import { Menu, Icon } from 'antd';
+import { Menu, Icon } from 'pantui';
 import { Link } from 'dva/router'
 import IconFont from '@/components/IconFont';
 import { isUrl, urlToList } from '@/utils/utils'

@@ -2,7 +2,7 @@
  *  头部内容
  */
 import React, {Component} from 'react';
-import { Menu, Badge } from 'antd';
+import { Menu, Badge } from 'pantui';
 import { connect } from 'dva';
 import IconFont from '@/components/IconFont';
 import logo from '@/assets/logo.png';
